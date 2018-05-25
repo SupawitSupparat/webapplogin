@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Task;
+use App\Leavelog;
 
-class TasksController extends Controller
+class LeavelogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class TasksController extends Controller
     public function index()
     {
         //
-        $tasks = Task::orderBy('created_at','asc')->get();
-        return view('tasks.index')->with('tasks', $tasks);
+        $leavelogs = Leavelog::orderBy('created_at','asc')->get();
+        return view('leavelogs.index')->with('leavelogs', $leavelogs);
     }
 
     /**
@@ -27,7 +27,6 @@ class TasksController extends Controller
     public function create()
     {
         //
-        return view('tasks.create');
     }
 
     /**
@@ -39,17 +38,6 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,[
-          'title' => 'required',
-          'task' => 'required',
-          'subordinate' => 'required'
-        ]);
-        $task = new Task();
-        $task->title = $request->input('title');
-        $task->task = $request->input('task');
-        $task->subordinate = $request->input('subordinate');
-        $task->save();
-        return redirect('/tasks')->with('success','Task Created');
     }
 
     /**
@@ -61,8 +49,6 @@ class TasksController extends Controller
     public function show($id)
     {
         //
-        $task = Task::find($id);
-        return view('tasks.show')->with('task',$task);
     }
 
     /**

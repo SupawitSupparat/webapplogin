@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/tasks','TasksController');
+Route::resource('/leavelog','LeavelogController');
 
 Auth::routes();
 
