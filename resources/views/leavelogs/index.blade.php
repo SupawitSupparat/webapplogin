@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-  <h1>Tasks</h1>
-  <a href="/tasks/create" class="btn btn-default">Create task</a>
-  @if(count($tasks) > 1)
-    @foreach($tasks as $task)
+  <h1>Leave log</h1>
+  <a href="/leavelogs/create" class="btn btn-default">Create leave permissions</a>
+  @if(count($leavelogs) > 0)
+    @foreach($leavelogs as $leavelog)
       <div class = "well">
-        <h3><a href="/tasks/{{$task->id}}">{{$task->title}}</h3>
-        <p>Assigned at {{$task->created_at}}</p>
+        <h3><a href="/leavelogs/{{$leavelog->id}}">{{$leavelog->reason}}</h3>
+        <p>Assigned at {{$leavelog->created_at}}</p>
       </div>
     @endforeach
   @else
-    <p>No tasks found</p>
+    <p>No logs found</p>
   @endif
 @endsection

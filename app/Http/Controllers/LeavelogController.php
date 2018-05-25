@@ -15,8 +15,8 @@ class LeavelogController extends Controller
     public function index()
     {
         //
-        $tasks = Task::orderBy('created_at','asc')->get();
-        return view('tasks.index')->with('tasks', $tasks);
+        $leavelogs = Leavelog::orderBy('created_at','asc')->get();
+        return view('leavelogs.index')->with('leavelogs', $leavelogs);
     }
 
     /**

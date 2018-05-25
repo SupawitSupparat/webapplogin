@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-  <h1>Create Task</h1>
+  <h1>Create Leave permissions</h1>
   {!! Form::open(['action'=>'TasksController@store','method'=>'POST'])!!}
     <div class = "from-group">
       {{Form::label('title','Title')}}

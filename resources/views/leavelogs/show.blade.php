@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  <a href="/tasks" class="btn btn-default">Go back</a>
+  <a href="/leavelog" class="btn btn-default">Go back</a>
   <h1>{{$task->title}}</h1>
 
   <div>
