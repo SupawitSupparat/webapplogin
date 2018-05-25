@@ -15,6 +15,9 @@ class CreateLeavelogsTable extends Migration
     {
         Schema::create('leavelogs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('reasons');
+            $table->string('duration');
+            $table->string('substisute');
             $table->timestamps();
         });
     }

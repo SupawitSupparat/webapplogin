@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Leavelog;
 
 class LeavelogController extends Controller
 {
@@ -14,6 +15,8 @@ class LeavelogController extends Controller
     public function index()
     {
         //
+        $tasks = Task::orderBy('created_at','asc')->get();
+        return view('tasks.index')->with('tasks', $tasks);
     }
 
     /**
