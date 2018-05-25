@@ -62,6 +62,7 @@
         </nav>
 
         <main class="py-4">
+            @extends('inc.messages')
             @yield('content')
         </main>
     </div>
