@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/tasks','TasksController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -22,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
-  
+
 // Registration Routes...
 $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 $this->post('register', 'Auth\RegisterController@register');
