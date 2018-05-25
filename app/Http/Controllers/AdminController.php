@@ -11,7 +11,14 @@ class AdminController extends Controller
     {
         return view('admin.home');
     }
- 
+    public function gen()
+    {
+        return view('vendor.laravel-admin.generator');
+    }
+    public function user()
+    {
+        return view('admin.users.form');
+    }
     public function __construct()
     {
         $this->middleware('auth');

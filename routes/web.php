@@ -33,5 +33,10 @@ $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/admin', 'AdminController@index');
-
+Route::get('/admin/generator','AdminController@gen');
+Route::get('/admin/users','AdminController@user');
 Route::get('/superadmin', 'SuperAdminController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
